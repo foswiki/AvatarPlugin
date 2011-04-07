@@ -1,0 +1,7 @@
+!noci
+data/System/AvatarPlugin.txt 0644 Documentation page
+pub/System/AvatarPlugin/example.jpg
+data/System/VarAVATAR.txt 0644 Tag documentation
+#data/Sandbox/PluginTestAvatarPlugin.txt 0644 Examples
+lib/Foswiki/Plugins/AvatarPlugin.pm 0444 Perl module
+lib/Foswiki/Plugins/AvatarPlugin/Config.spec 0444 Configuration

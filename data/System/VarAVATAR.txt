@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="ProjectContributor" date="1297235055" format="1.1" version="$Rev$"}%
+%META:TOPICPARENT{name="AvatarPlugin"}%
+#VarAVATAR
+---+++ AVATAR -- try to show a gravatar for a user
+   * The =%<nop>AVATAR{}%= variable is handled by the AvatarPlugin
+   * Syntax: =%<nop>AVATAR{"UserWikiName" default="..." size="24"}%=
+   * Parameter =default="..."= - a default icon to use - *Defaults to mm*
+     can be =404=, =mm=, =identicon=, =monsterid=, =wavatar=, =retro= or a =url= to an image (see http://en.gravatar.com/site/implement/images/)
+   * Parameter =size="..."= - image size in pixels (just a number) - *Defaults to 20*
+   * Example: =%<nop>AVATAR{"SvenDowideit" default="identicon" size="48"}%= - returns %AVATAR{"SvenDowideit" default="identicon" size="48"}%
+   * Related: AvatarPlugin

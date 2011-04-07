@@ -1,0 +1,40 @@
+%META:TOPICPARENT{name="Plugins"}%
+<!--
+One line description, required for extensions repository catalog.
+   * Set SHORTDESCRIPTION = embed Avatars into foswiki
+-->
+---+!! Avatar plugin
+
+<img class="foswikiRight foswikiImage" src="%ATTACHURL%/example.jpg" />
+
+%SHORTDESCRIPTION%
+
+Add http://www.libravatar.org/ (or run your own libravatar server) or http://gravatar.com user images to your foswiki.
+
+When this plugin is enabled, Any Links to user's home pages get that user's avatar image added to it.
+
+%INCLUDE{VarAVATAR}%
+
+---++ Configuration
+You can select the avatar server to use in =Extensions= - =AvatarPlugin= - =AvatarServerBaseUrl= in =configure=
+
+---++ TODO
+   2 gravatar profile popups
+   4 context aware size options (configurable default and size) - or perhaps replace plugin magic with a =AVATAR= for more control
+   5 could it be possible to over-ride the remote server with a user topic setting? allowing local foswiki customisations
+
+---++ Installation
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+|  Author: | foswiki:Main.SvenDowideit - http://fosiki.com |
+|  Copyright: | &copy; 2011, SvenDowideit@fosiki.com |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License 3]]) |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
+|  1.0.0 (07 Apr 2011): | Initial version |
+|  Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
+
