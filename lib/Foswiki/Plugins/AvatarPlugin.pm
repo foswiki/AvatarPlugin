@@ -28,20 +28,55 @@ sub initPlugin {
 sub AVATAR {
     my($session, $params, $topic, $web, $topicObject) = @_;
 
-    my $linkText = '';
-    my @emails = Foswiki::Func::wikinameToEmails($params->{_DEFAULT});
-    #TODO: consider the other emails later..
-    use URI::Escape qw(uri_escape);
-    use Digest::MD5 qw(md5_hex);
-    my $email = $emails[0] || $topic;
-    my $default = $params->{default} || "mm";
     my $size = $params->{size} || 20;
-    #TODO: tmpl?
-    my $host = $Foswiki::cfg{AvatarPlugin}{AvatarServerBaseUrl} || 'http://cdn.libravatar.org/avatar/';
-    my $grav_url = $host.md5_hex(lc $email)."?d=".uri_escape($default)."&s=".$size;
+ 
 
-    $linkText = "<img src=\"$grav_url\" />".$linkText;
+    my $linkText = '';
+    if (not defined($Foswiki::cfg{AvatarPlugin}{UsePersonalInfoAddOn}) or (not $Foswiki::cfg{AvatarPlugin}{UsePersonalInfoAddOn})) {
+        my @emails = Foswiki::Func::wikinameToEmails($params->{_DEFAULT});
+        #TODO: consider the other emails later..
+        my $email = $emails[0] || $topic;
+        use URI::Escape qw(uri_escape);
+        use Digest::MD5 qw(md5_hex);
+        my $default = $params->{default} || "mm";
+        #TODO: tmpl?
+        my $host = $Foswiki::cfg{AvatarPlugin}{AvatarServerBaseUrl} || 'http://cdn.libravatar.org/avatar/';
+        my $grav_url = $host.md5_hex(lc $email)."?d=".uri_escape($default)."&s=".$size;
 
+        $linkText = "<img src=\"$grav_url\" />".$linkText;
+    } else {
+        #TODO: check access permission
+        my ( $meta, $text ) = Foswiki::Func::readTopic( $Foswiki::cfg{UsersWebName},  $params->{_DEFAULT});
+        
+        my $picture = $meta->get( 'FIELD', 'Picture' );
+        
+        #TODO: all this needs to be in a tmpl, so it can be skinned.
+
+        #$linkText = "<img height=\"".$size."px\" src=\"".Foswiki::Func::getPubUrlPath().'/'.$Foswiki::cfg{UsersWebName}.'/'.$params->{_DEFAULT}.'/'.$picture->{value}."\" />".$linkText;
+        
+        #pub/System/PersonalInfoAddOn/silhouette.gif
+        my $iweb = $Foswiki::cfg{SystemWebName};
+        my $itopic = 'PersonalInfoAddOn';
+        my $image = 'silhouette.gif';
+        if (defined($picture) and defined($picture->{value})) {
+            $iweb = $Foswiki::cfg{UsersWebName};
+            $itopic = $params->{_DEFAULT};
+            $image = $picture->{value};
+        }
+        
+        #ask ImagePlugin for an image the right size..
+        require Foswiki::Plugins::ImagePlugin;
+        $linkText = Foswiki::Plugins::ImagePlugin::handleIMAGE($session, {
+                                                                #_DEFAULT => Foswiki::Func::getPubUrlPath().'/'.$Foswiki::cfg{UsersWebName}.'/'.$params->{_DEFAULT}.'/'.$picture->{value},
+                                                                web => $iweb,
+                                                                topic => $itopic,
+                                                                _DEFAULT => $image,
+                                                                alt=>" ", 
+                                                                height => $size
+                                                            });
+        
+        
+    }
     return $linkText;
 }
 

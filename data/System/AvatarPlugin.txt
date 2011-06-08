@@ -9,7 +9,7 @@ One line description, required for extensions repository catalog.
 
 %SHORTDESCRIPTION%
 
-Add http://www.libravatar.org/ (or run your own libravatar server) or http://gravatar.com user images to your foswiki.
+Add http://www.libravatar.org/ (or run your own libravatar server) or http://gravatar.com __or Foswiki:Extension.PersonalInfoAddOn user images to your foswiki.
 
 When this plugin is enabled, Any Links to user's home pages get that user's avatar image added to it.
 
@@ -18,7 +18,9 @@ When this plugin is enabled, Any Links to user's home pages get that user's avat
 ---++ Configuration
 You can select the avatar server to use in =Extensions= - =AvatarPlugin= - =AvatarServerBaseUrl= in =configure=
 
----++ TODO
+or you can tell the plugin to only use the Foswiki:Extension.PersonalInfoAddOn images - requires Foswiki:Extension.PersonalInfoAddOn and Foswiki:Extension.ImagePlugin
+
+---++ future development
    2 gravatar profile popups
    4 context aware size options (configurable default and size) - or perhaps replace plugin magic with a =AVATAR= for more control
    5 could it be possible to over-ride the remote server with a user topic setting? allowing local foswiki customisations
@@ -34,7 +36,7 @@ You can select the avatar server to use in =Extensions= - =AvatarPlugin= - =Avat
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
-|  1.0.0 (07 Apr 2011): | Initial version |
+|  1.0.0 (08 June 2011): | Initial version |
 |  Home: | http://foswiki.org/Extensions/%TOPIC% |
 |  Support: | http://foswiki.org/Support/%TOPIC% |
 
