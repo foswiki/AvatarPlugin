@@ -1,3 +1,4 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1307535682" format="1.1" version="1"}%
 %META:TOPICPARENT{name="Plugins"}%
 <!--
 One line description, required for extensions repository catalog.
@@ -40,3 +41,5 @@ or you can tell the plugin to only use the Foswiki:Extension.PersonalInfoAddOn i
 |  Home: | http://foswiki.org/Extensions/%TOPIC% |
 |  Support: | http://foswiki.org/Support/%TOPIC% |
 
+
+%META:FILEATTACHMENT{name="example.jpg" attachment="example.jpg" attr="H" comment="" date="1307535682" path="example.jpg" size="6518" version="1"}%
