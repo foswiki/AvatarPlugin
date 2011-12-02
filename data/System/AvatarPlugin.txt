@@ -2,7 +2,7 @@
 %META:TOPICPARENT{name="Plugins"}%
 <!--
 One line description, required for extensions repository catalog.
-   * Set SHORTDESCRIPTION = embed Avatars into foswiki
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
 -->
 ---+!! Avatar plugin
 
@@ -10,36 +10,31 @@ One line description, required for extensions repository catalog.
 
 %SHORTDESCRIPTION%
 
-Add http://www.libravatar.org/ (or run your own libravatar server) or http://gravatar.com __or Foswiki:Extension.PersonalInfoAddOn user images to your foswiki.
+Add http://www.libravatar.org/ (or run your own libravatar server) or http://gravatar.com __or Foswiki:Extension.PersonalInfoAddOn user images to your pages.
 
-When this plugin is enabled, Any Links to user's home pages get that user's avatar image added to it.
+When this plugin is enabled, any Links to a user's home pages get that user's avatar image added to it.
 
 %INCLUDE{VarAVATAR}%
 
 ---++ Configuration
-You can select the avatar server to use in =Extensions= - =AvatarPlugin= - =AvatarServerBaseUrl= in =configure=
+You can select the avatar server to use by setting ={Extensions}{Plugins}{AvatarPlugin}{ServerBaseUrl}= in =configure=.
 
-or you can tell the plugin to only use the Foswiki:Extension.PersonalInfoAddOn images - requires Foswiki:Extension.PersonalInfoAddOn and Foswiki:Extension.ImagePlugin
-
----++ future development
-   2 gravatar profile popups
-   4 context aware size options (configurable default and size) - or perhaps replace plugin magic with a =AVATAR= for more control
-   5 could it be possible to over-ride the remote server with a user topic setting? allowing local foswiki customisations
+Alternatively if you have the Foswiki:Extension.PersonalInfoAddOn and Foswiki:Extension.ImagePlugin installed (optional), you can tell the plugin to only use the !PersonalInfoAddOn images.
 
 ---++ Installation
 %$INSTALL_INSTRUCTIONS%
 
 ---++ Info
 
-|  Author: | foswiki:Main.SvenDowideit - http://fosiki.com |
+|  Author: | Foswiki:Main.SvenDowideit - http://fosiki.com |
 |  Copyright: | &copy; 2011, SvenDowideit@fosiki.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License 3]]) |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
+|  1.1.0 (02 Dec 2011): | Tidied up a bit |
 |  1.0.0 (08 June 2011): | Initial version |
 |  Home: | http://foswiki.org/Extensions/%TOPIC% |
 |  Support: | http://foswiki.org/Support/%TOPIC% |
-
 
 %META:FILEATTACHMENT{name="example.jpg" attachment="example.jpg" attr="H" comment="" date="1307535682" path="example.jpg" size="6518" version="1"}%
