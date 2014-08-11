@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1297235055" format="1.1" version="$Rev$"}%
+%META:TOPICINFO{author="ProjectContributor" date="1407719366" format="1.1" version="1"}%
 %META:TOPICPARENT{name="AvatarPlugin"}%
 #VarAVATAR
 ---+++ AVATAR -- try to show a gravatar for a user
